@@ -11,6 +11,13 @@ require("./config/databse").connect();
 const user=require("./routes/user");
 app.use("/api/v1",user);
 
+
+app.use("/",(req,res)=>{
+    res.json({
+        status:"API WORKING FINE",
+        code:200
+    });
+})
 // activate
 app.listen(PORT,()=>{
     console.log(`App is listening at ${PORT}`);
